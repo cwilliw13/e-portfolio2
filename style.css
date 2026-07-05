@@ -192,6 +192,33 @@ nav {
     padding: 50px 20px;
     background-color: #f4f7fb;
     min-height: 100vh;
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+#about-me.loaded {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#about-me .about-me__info--heading,
+#about-me .about-me__info--text {
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+#about-me.loaded .about-me__info--heading {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.2s;
+}
+
+#about-me.loaded .about-me__info--text {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.35s;
 }
 
 .about-me__info {
@@ -537,6 +564,103 @@ footer {
         flex: 1 1 100%;
         margin-top: 16px;
         text-align: center;
+    }
+}
+
+/* iPhone / small phone layout adjustments */
+@media (max-width: 450px) {
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        height: auto;
+        padding: 14px 16px;
+    }
+
+    .nav__link--list {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    .nav__link--anchor {
+        margin: 0;
+        padding: 8px 10px;
+    }
+
+    .personal__logo {
+        width: auto;
+        font-size: 20px;
+        margin: 0;
+    }
+
+    #about-me {
+        padding: 36px 16px;
+    }
+
+    .about-me__picture--mask {
+        width: 120px;
+        height: 120px;
+        margin-bottom: 26px;
+    }
+
+    .about-me__info--heading {
+        font-size: 28px;
+    }
+
+    .about-me__info--text {
+        font-size: 18px;
+        margin-bottom: 24px;
+    }
+
+    .about-me__links {
+        font-size: 26px;
+        gap: 16px;
+    }
+
+    .about-me__img--container,
+    .about-me__info {
+        width: 100%;
+    }
+
+    .about-me__img--container {
+        padding: 22px;
+    }
+
+    .about-me__img {
+        max-width: 100%;
+        border-radius: 20px;
+    }
+
+    .language__img {
+        width: 70px;
+        margin-bottom: 16px;
+    }
+
+    .language__name {
+        margin-top: 100px;
+    }
+
+    .project__container {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .project__img {
+        max-width: 100%;
+        margin-top: 24px;
+    }
+
+    .project {
+        padding: 14px;
+    }
+
+    .footer__social--list {
+        gap: 16px;
+    }
+
+    footer {
+        padding: 20px 16px;
     }
 }
 
